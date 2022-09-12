@@ -2,9 +2,51 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    document.addEventListener('alpine:init', () => {
+      Alpine.data('dropdown', () => ({
+        open: false,
+
+        toggle() {
+          this.open = ! this.open
+        }
+      }))
+    })
+  </script>
 </head>
-<body>
-  <h1>hello, world</h1>
+<body class="flex flex-col min-h-screen">
+  <header class="bg-gray-900 text-white">
+    <div class="container mx-auto px-4 py-2">
+      <h1 class="text-2xl">Alpine.js + Tailwind CSS</h1>
+    </div>
+  </header>
+  <main x-data="dropdown" class="flex-grow">
+    <!-- スマホ li -->
+    <div class="sm:hidden">
+      <div class="container mx-auto px-4 py-2">
+        <button class="bg-gray-900 text-white px-4 py-2 rounded" @click="toggle">
+          メニュー
+        </button>
+      </div>
+      <div x-show="open" class="bg-gray-900 text-white">
+        <div class="container mx-auto px-4 py-2">
+          <ul>
+            <li><a href="#" class="block px-4 py-2 hover:bg-gray-800">メニュー1</a></li>
+            <li><a href="#" class="block px-4 py-2 hover:bg-gray-800">メニュー2</a></li>
+            <li><a href="#" class="block px-4 py-2 hover:bg-gray-800">メニュー3</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="bg-gray-900 text-white">
+    <div class="container mx-auto px-4 py-2">
+      <p class="text-center">© 2021</p>
+    </div>
+  </footer>
 </body>
 </html>
