@@ -19,34 +19,86 @@
   </script>
 </head>
 <body class="flex flex-col min-h-screen">
-  <header class="bg-gray-900 text-white">
+  <header class="bg-gray-900 text-white top-0 fixed w-full z-10">
     <div class="container mx-auto px-4 py-2">
       <h1 class="text-2xl">Alpine.js + Tailwind CSS</h1>
     </div>
   </header>
-  <main x-data="dropdown" class="flex-grow">
-    <!-- スマホ li -->
-    <div class="sm:hidden">
+  <main x-data="dropdown" class="flex-grow my-24">
+    <div class="sm">
       <div class="container mx-auto px-4 py-2">
-        <button class="bg-gray-900 text-white px-4 py-2 rounded" @click="toggle">
-          メニュー
-        </button>
+        <h1 class="text-2xl">マイページ</h1>
       </div>
-      <div x-show="open" class="bg-gray-900 text-white">
-        <div class="container mx-auto px-4 py-2">
-          <ul>
-            <li><a href="#" class="block px-4 py-2 hover:bg-gray-800">メニュー1</a></li>
-            <li><a href="#" class="block px-4 py-2 hover:bg-gray-800">メニュー2</a></li>
-            <li><a href="#" class="block px-4 py-2 hover:bg-gray-800">メニュー3</a></li>
-          </ul>
+      <div class="container mx-auto px-4 py-2">
+        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+          <div class="px-4 py-2">
+            <div class="flex justify-between items-center">
+              <h1 class="text-xl font-bold">1ヶ月のプラン</h1>
+              <a class="text-gray-600 text-sm underline" href="/">プランの変更</a>
+            </div>
+            <p class="text-gray-600">残り31日</p>
+            <hr class="my-2">
+            <div class="flex items-center">
+              <p class="text-gray-600">ポイント</p>
+              <p class="text-gray-600 ml-auto">0pt</p>
+            </div>
+          </div>
         </div>
+        <div class="bg-white shadow-md rounded-lg overflow-hidden mt-4">
+          <div class="px-4 py-2">
+            <h1 class="text-xl font-bold">履歴</h1>
+            <hr class="my-2">
+            <template x-for="i in 10">
+              <div>
+                <div class="flex items-center">
+                  <div class="w-12 h-12 bg-gray-200 rounded-full"></div>
+                  <div class="ml-2 flex-grow">
+                    <p class="text-gray-600">Aセット</p>
+                    <hr class="mb-2">
+                    <p class="text-gray-600">説明説明説明説明説明</p>
+                  </div>
+                </div>
+                <hr class="my-2">
+              </div>
+            </template>
+          </div>
       </div>
     </div>
   </main>
-  <footer class="bg-gray-900 text-white">
+  <footer class="bg-gray-900 text-white bottom-0 fixed w-full z-10">
+    <!-- button x5 -->
     <div class="container mx-auto px-4 py-2">
-      <p class="text-center">© 2021</p>
-    </div>
+      <div class="flex justify-between">
+        <button class="w-1/5 text-center py-2">
+          <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <p class="text-xs">ホーム</p>
+        </button>
+        <button class="w-1/5 text-center py-2">
+          <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <p class="text-xs">ホーム</p>
+        </button>
+        <button class="w-1/5 text-center py-2">
+          <svg class="w-10 h-10 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <p class="text-xs">ホーム</p>
+        </button>
+        <button class="w-1/5 text-center py-2">
+          <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <p class="text-xs">ホーム</p>
+        </button>
+        <button class="w-1/5 text-center py-2">
+          <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <p class="text-xs">ホーム</p>
+        </button>
   </footer>
 </body>
 </html>
