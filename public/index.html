@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="manifest" href="manifest.json">
+  <script async src="https://cdn.jsdelivr.net/npm/pwacompat" crossorigin="anonymous"></script>
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -46,7 +48,7 @@
     </div>
   </header>
   <main class="mt-32 mb-20">
-    <div class="container flex justify-center">
+    <div class="flex justify-center">
       <div class="container flex flex-col items-center mx-6">
         <p class="text-md font-bold my-2">今日の予約</p>
         <div class="my-2 mx-6 bg-[#F0F0F0] rounded w-full h-[215px]">
@@ -57,17 +59,19 @@
         </div>
       </div>
     </div>
-    <div class="container">
-      <div class="flex justify-evenly mt-8">
-        <button class="bg-[#ED6B7B] rounded-full w-32 h-12 flex justify-center items-center border-[#ED6B7B] border-2">
-          <p class="text-xs text-[#FFFEEE]">予約する</p>
-        </button>
-        <button class="bg-[#FFFEEE] rounded-full w-32 h-12 flex justify-center items-center border-[#ED6B7B] border-2">
-          <p class="text-xs text-[#ED6B7B]">予約済み朝食</p>
-        </button>
+    <div class="flex justify-center">
+      <div class="container">
+        <div class="flex justify-evenly mt-8">
+          <button class="bg-[#ED6B7B] rounded-full w-32 h-12 flex justify-center items-center border-[#ED6B7B] border-2">
+            <p class="text-xs text-[#FFFEEE]">予約する</p>
+          </button>
+          <button class="bg-[#FFFEEE] rounded-full w-32 h-12 flex justify-center items-center border-[#ED6B7B] border-2">
+            <p class="text-xs text-[#ED6B7B]">予約済み朝食</p>
+          </button>
+        </div>
       </div>
     </div>
-    <div class="container flex justify-center flex-wrap mt-12">
+    <div class="flex justify-center flex-wrap mt-12">
       <div class="container flex flex-col items-center mx-6">
         <p class="text-md font-bold my-2">予約済み一覧</p>
       </div>
