@@ -3,7 +3,7 @@ version: "3.9"
 services:
   node:
     image: node:17-alpine
-    container_name: "remote_for_slides"
+    container_name: "shokusuru"
     working_dir: /app
     volumes:
       - ./:/app
@@ -14,4 +14,16 @@ services:
         npm install
         npm install -g nodemon
         npm run dev
+      "
+
+  gulp:
+    image: node:17-alpine
+    container_name: "gulp"
+    working_dir: /app
+    volumes:
+      - ./:/app
+    command: >
+      sh -c "
+        npm install
+        npm run build
       "
