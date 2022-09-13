@@ -25,4 +25,4 @@ const watchFiles = (done) => {
 	done();
 };
 
-exports.default = gulp.series(watchFiles);
+exports.default = gulp.series([EJScompile, watchFiles]);
