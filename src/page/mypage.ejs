@@ -1,43 +1,43 @@
 <%- include('../components/header', {tenki:false}) %>
-  <main class="mt-32 mb-20">
-    <div class="sm">
-      <div class="container mx-auto px-4 py-2">
-        <h1 class="text-2xl">マイページ</h1>
-      </div>
-      <div class="container mx-auto px-4 py-2">
-        <div class="bg-white shadow-md rounded-lg overflow-hidden">
-          <div class="px-4 py-2">
-            <div class="flex justify-between items-center">
-              <h1 class="text-xl font-bold">1ヶ月のプラン</h1>
-              <a class="text-gray-600 text-sm underline" href="/">プランの変更</a>
-            </div>
-            <p class="text-gray-600">残り31日</p>
-            <hr class="my-2">
-            <div class="flex items-center">
-              <p class="text-gray-600">ポイント</p>
-              <p class="text-gray-600 ml-auto">0pt</p>
-            </div>
+  <main x-data class="mt-16 mb-20">
+    <div class="container mx-auto px-8 py-2">
+      <h1 class="text-xl py-2 border-b border-[#000]">マイページ</h1>
+    </div>
+    <div class="container mx-auto px-4 py-2 mt-12">
+      <div class="bg-[#FFFDD9] shadow-md rounded-lg overflow-hidden">
+        <div class="px-4 py-2">
+          <div class="flex justify-between items-center">
+            <h1 class="text-xl font-bold">1ヶ月のプラン</h1>
+            <a class="text-[#0066FF] text-sm underline" href="/">プランの変更</a>
+          </div>
+          <p class="text-gray-600 ml-10">残り31日</p>
+          <hr class="my-2 border-[#000]">
+          <div class="flex justify-between items-center">
+            <p class="text-gray-600">ポイント</p>
+            <p class="text-gray-600">0pt</p>
           </div>
         </div>
-        <div class="bg-white shadow-md rounded-lg overflow-hidden mt-4">
-          <div x-data class="px-4 py-2">
-            <h1 class="text-xl font-bold">履歴</h1>
-            <hr class="my-2">
-            <template x-for="i in 10">
-              <div>
-                <div class="flex items-center">
-                  <div class="w-12 h-12 bg-gray-200 rounded-full"></div>
-                  <div class="ml-2 flex-grow">
-                    <p class="text-gray-600">Aセット</p>
-                    <hr class="mb-2">
-                    <p class="text-gray-600">説明説明説明説明説明</p>
-                  </div>
-                </div>
-                <hr class="my-2">
-              </div>
-            </template>
-          </div>
       </div>
     </div>
+    <div class="container mx-auto px-8 py-2">
+      <h1 class="text-xl py-2 border-b border-[#000]">履歴</h1>
+    </div>
+    <template x-for="i in 10">
+      <div class="flex justify-center bg-[#FFFDD9] py-2 mt-2 mx-4 shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
+        <div class="w-full flex items-center">
+          <div class="w-5/12 flex justify-center">
+            <div class="w-24 h-24 bg-gray-200"></div>
+          </div>
+          <div class="w-6/12 flex-grow text-[#000]">
+            <p>Aセット</p>
+            <ul>
+              <li>・ 鮭のムニエル弁当</li>
+              <li>・ お茶</li>
+            </ul>
+          </div>
+        </div>
+        <hr class="my-2">
+      </div>
+    </template>
   </main>
 <%- include('../components/footer') %>
