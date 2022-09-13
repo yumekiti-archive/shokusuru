@@ -1,0 +1,33 @@
+<%- include('../components/header', {tenki:false}) %>
+  <main class="mt-32 mb-20">
+    <table class="border-collapse border border-slate-400 w-full">
+      <thead>
+        <tr>
+          <th></th>
+          <th>日付</th>
+          <th>時間</th>
+          <th>予約</th>
+        </tr>
+      </thead>
+      <tbody x-data>
+        <template x-for="i in 6">
+          <tr class="border border-slate-400">
+            <td class="border border-slate-400 px-4 text-center" x-text="i"></td>
+            <td class="border border-slate-400 px-4 text-center">
+              <p>鮭のムニエル</p>
+              <p>お茶</p>
+            </td>
+            <td class="border border-slate-400 px-4 text-center">
+              <p>唐揚げ</p>
+              <p>お茶</p>
+            </td>
+            <td class="border border-slate-400 px-4 text-center">
+              <p>ハムサンドイッチ</p>
+              <p>お茶</p>
+            </td>
+          </tr>
+        </template>
+      </tbody>
+    </table>
+  </main>
+<%- include('../components/footer') %>
