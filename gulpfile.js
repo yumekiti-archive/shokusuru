@@ -5,11 +5,13 @@ const replace = require("gulp-replace");
 const plumber = require('gulp-plumber');
 const fs = require('fs');
 
+const path = ["./src/page/*.ejs", "!./src/_*.ejs"];
+
 const EJScompile = (done) => {
 	const json_path = "./data.json";
   const json = JSON.parse(new fs.readFileSync(json_path));
 
-	gulp.src(["./src/page/*.ejs", "!./src/_*.ejs"])
+	gulp.src(path)
 		.pipe(plumber())
 		.pipe(ejs({
 			jsonData: json
@@ -21,7 +23,7 @@ const EJScompile = (done) => {
 };
 
 const watchFiles = (done) => {
-	gulp.watch(["./src/*.ejs", "!./src/_*.ejs"], EJScompile);
+	gulp.watch(path, EJScompile);
 	done();
 };
 

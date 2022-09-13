@@ -1,0 +1,45 @@
+<%- include('../components/header') %>
+  <main class="mt-32 mb-20">
+    <div class="flex justify-center">
+      <div class="container flex flex-col items-center mx-6">
+        <p class="text-md font-bold my-2">今日の予約</p>
+        <div class="my-2 mx-6 bg-[#F0F0F0] rounded w-full h-[215px]">
+          <p class="absolute text-[#333333] text-sm mt-4 ml-4">9月16日(木)</p>
+          <div class="w-full h-full flex flex-col justify-center items-center">
+            <p class="text-[#333333] text-center items-center">予約がありません</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-center">
+      <div class="container">
+        <div class="flex justify-evenly mt-8">
+          <button class="bg-[#ED6B7B] rounded-full w-32 h-12 flex justify-center items-center border-[#ED6B7B] border-2">
+            <p class="text-xs text-[#FFFEEE]">予約する</p>
+          </button>
+          <button class="bg-[#FFFEEE] rounded-full w-32 h-12 flex justify-center items-center border-[#ED6B7B] border-2">
+            <p class="text-xs text-[#ED6B7B]">予約済み朝食</p>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-center flex-wrap mt-12">
+      <div class="container flex flex-col items-center mx-6">
+        <p class="text-md font-bold my-2">予約済み一覧</p>
+      </div>
+      <div class="container flex flex-col">
+        <div class="flex justify-evenly">
+          <div class="w-6/12 bg-[#F0F0F0] py-2 flex flex-col items-center rounded-xl">
+            <p class="text-[#333333] text-xs mt-4">9月16日(木) 鮭のムニエル弁当 A</p>
+            <p class="text-[#333333] text-xs mt-4">9月16日(木) 鮭のムニエル弁当 A</p>
+            <p class="text-[#333333] text-xs mt-4">9月16日(木) 鮭のムニエル弁当 A</p>
+          </div>
+          <div class="w-4/12 flex flex-col items-center">
+            <div class="bg-[#F0F0F0] w-full h-24 rounded-xl"></div>
+            <p class="text-[#333333] text-xs mt-2">※キャンセルは前日まで</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+<%- include('../components/footer') %>
