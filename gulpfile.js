@@ -18,7 +18,7 @@ const EJScompile = (done) => {
 		}, {}, { ext: '.html' }))
 		.pipe(rename({ extname: '.html' }))
 		.pipe(replace(/^[ \t]*\n/gmi, ''))
-		.pipe(gulp.dest("./dest/"));
+		.pipe(gulp.dest("./public/"));
 	done();
 };
 
