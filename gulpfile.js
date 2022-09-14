@@ -12,7 +12,7 @@ const EJScompile = (done) => {
 	gulp.src(["./src/page/*.ejs"])
 		.pipe(plumber())
 		.pipe(ejs({
-			jsonData: json
+			data: json
 		}, {}, { ext: '.html' }))
 		.pipe(rename({ extname: '.html' }))
 		.pipe(replace(/^[ \t]*\n/gmi, ''))
