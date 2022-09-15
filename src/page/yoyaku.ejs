@@ -1,0 +1,82 @@
+<%- include('../components/header', {tenki:false}) %>
+  <main class="mt-16 mb-28">
+    <div class="bg-[#FFFDD9] flex justify-center">
+      <p class="text-xl my-4 text-center">2022年 9月</p>
+    </div>
+    <table class="table-auto mx-auto w-full h-72">
+      <thead x-data="{weeks: ['日', '月', '火', '水', '木', '金', '土']}">
+        <tr class="border border-[#000]">
+          <template x-for="week in weeks" :key="week">
+            <th class="border border-[#000]" x-text="week"></th>
+          </template>
+        </tr>
+      </thead>
+      <tbody x-data="{weeks: [[28,29,30,31,1,2,3],[4,5,6,7,8,9,10],[11,12,13,14,15,16,17],[18,19,20,21,22,23,24],[25,26,27,28,29,30,1]]}">
+        <template x-for="week in weeks">
+          <tr>
+            <template x-for="day in week" :key="day">
+              <td class="text-center border border-[#000]" x-text="day"></td>
+            </template>
+          </tr>
+        </template>
+      </tbody>
+    </table>
+    <div x-data="{isModalOpen: false}">
+      <div class="flex items-center h-10 bg-[#FFFDD9]">
+        <p class="ml-2 font-bold">9月1日(木)</p>
+      </div>
+      <div class="w-full flex items-center py-2 border border-[#000]">
+        <img class="mx-4 w-20 h-20" src="../img/sakana.png" alt="">
+        <div class="ml-4 text-[#000] font-bold">
+          <p class="mb-2">Aセット</p>
+          <ul>
+            <li>・ 鮭のムニエル</li>
+            <li>・ お茶</li>
+          </ul>
+        </div>
+        <div class="ml-auto mr-4">
+          <button class="px-4 py-2">
+            <svg class="mx-auto" width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8.5 4H13.5C13.5 3.33696 13.2366 2.70107 12.7678 2.23223C12.2989 1.76339 11.663 1.5 11 1.5C10.337 1.5 9.70107 1.76339 9.23223 2.23223C8.76339 2.70107 8.5 3.33696 8.5 4ZM7 4C7 2.93913 7.42143 1.92172 8.17157 1.17157C8.92172 0.421427 9.93913 0 11 0C12.0609 0 13.0783 0.421427 13.8284 1.17157C14.5786 1.92172 15 2.93913 15 4H21.25C21.4489 4 21.6397 4.07902 21.7803 4.21967C21.921 4.36032 22 4.55109 22 4.75C22 4.94891 21.921 5.13968 21.7803 5.28033C21.6397 5.42098 21.4489 5.5 21.25 5.5H19.94L18.723 20.103C18.6345 21.1653 18.1499 22.1556 17.3655 22.8774C16.5811 23.5992 15.554 23.9999 14.488 24H7.512C6.44599 23.9999 5.41894 23.5992 4.6345 22.8774C3.85007 22.1556 3.36554 21.1653 3.277 20.103L2.06 5.5H0.75C0.551088 5.5 0.360322 5.42098 0.21967 5.28033C0.0790175 5.13968 0 4.94891 0 4.75C0 4.55109 0.0790175 4.36032 0.21967 4.21967C0.360322 4.07902 0.551088 4 0.75 4H7ZM9.5 9.75C9.5 9.55109 9.42098 9.36032 9.28033 9.21967C9.13968 9.07902 8.94891 9 8.75 9C8.55109 9 8.36032 9.07902 8.21967 9.21967C8.07902 9.36032 8 9.55109 8 9.75V18.25C8 18.4489 8.07902 18.6397 8.21967 18.7803C8.36032 18.921 8.55109 19 8.75 19C8.94891 19 9.13968 18.921 9.28033 18.7803C9.42098 18.6397 9.5 18.4489 9.5 18.25V9.75ZM13.25 9C13.0511 9 12.8603 9.07902 12.7197 9.21967C12.579 9.36032 12.5 9.55109 12.5 9.75V18.25C12.5 18.4489 12.579 18.6397 12.7197 18.7803C12.8603 18.921 13.0511 19 13.25 19C13.4489 19 13.6397 18.921 13.7803 18.7803C13.921 18.6397 14 18.4489 14 18.25V9.75C14 9.55109 13.921 9.36032 13.7803 9.21967C13.6397 9.07902 13.4489 9 13.25 9Z" fill="#FF7676"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="flex justify-center mt-2">
+        <button class="w-full mx-12 bg-[#46A971] rounded-lg shadow-[0px_4px_4px_rgba(0,0,0,0.25)]" @click="isModalOpen = true">
+          <p class="text-sm text-[#fff] py-2">予約する</p>
+        </button>
+      </div>
+      <!-- モーダル -->
+      <div class="fixed top-0 left-0 w-full h-full bg-[#000] bg-opacity-50 z-40" x-show="isModalOpen">
+        <div class="fixed bottom-0 h-3/5 w-full overflow-auto bg-[#414141] rounded-t-2xl pb-12">
+          <svg class="my-6 mx-auto" width="178" height="13" viewBox="0 0 178 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="178" height="13" rx="6.5" fill="#B7B7B7"/>
+          </svg>
+          <div @click.away="isModalOpen = false">
+            <template x-for="i in 30">
+              <div class="w-full flex items-center py-2">
+                <img class="mx-4 w-20 h-20" src="../img/pasuta.png" alt="">
+                <div class="text-[#fff]">
+                  <p class="mb-2">日替わり弁当</p>
+                  <div class="text-xs">
+                    <p>働く人の健康を考えられた</p>
+                    <p>日替わり弁当</p>
+                  </div>
+                </div>
+                <div class="ml-auto mr-4">
+                  <input type="checkbox" class="form-checkbox h-6 w-6">
+                </div>
+              </div>
+            </template>
+          </div>
+        </div>
+        <div class="fixed bottom-0 w-full flex justify-center my-2">
+          <button class="w-full mx-4 bg-[#46A971] rounded-lg shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
+            <p class="text-sm text-[#fff] py-2">決定する</p>
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+<%- include('../components/footer') %>

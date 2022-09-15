@@ -12,8 +12,8 @@
       </div>
     </div>
     <div class="container">
-      <div class="flex justify-end mx-6">
-        <button class="bg-[#46A971] rounded-lg shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
+      <div x-data class="flex justify-end mx-6">
+        <button class="bg-[#46A971] rounded-lg shadow-[0px_4px_4px_rgba(0,0,0,0.25)]" @click="location.pathname = '<%= data.path %>/yoyaku.html'">
           <p class="flex items-center text-sm text-[#fff] px-4 py-2">予約画面へ
             <svg class="ml-3" width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M-1.82168e-07 1.175L3.7085 5L-8.50953e-07 8.825L1.1417 10L6 5L1.1417 5.28948e-07L-1.82168e-07 1.175Z" fill="white"/>
